@@ -13,7 +13,6 @@ func main() {
 	http.Handle("/", addHeaders(http.FileServer(http.Dir(songsDir))))
 	fmt.Printf("Starting server on %v\n", port)
 	log.Printf("Serving %s on HTTP port: %v\n", songsDir, port)
-
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", port), nil))
 }
 
