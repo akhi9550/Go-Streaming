@@ -7,12 +7,12 @@ import (
 )
 
 func main() {
-	const songsDir = "video"
-	const port = 8000
+	const videoDir = "video"
+	const port = 8080
 
-	http.Handle("/", addHeaders(http.FileServer(http.Dir(songsDir))))
+	http.Handle("/", addHeaders(http.FileServer(http.Dir(videoDir))))
 	fmt.Printf("Starting server on %v\n", port)
-	log.Printf("Serving %s on HTTP port: %v\n", songsDir, port)
+	log.Printf("Serving %s on HTTP port: %v\n", videoDir, port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", port), nil))
 }
 
